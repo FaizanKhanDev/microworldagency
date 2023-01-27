@@ -1,0 +1,28 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Thank You {% endblock %}
+
+{% block maincontent %}
+<div class="thanks">
+    <div>
+        <div class="thanksmain-description">
+            {% for thanks in thanks %}
+            <h1 data-animation="slideInDown" class="thanks-title">
+                {{thanks.title}}
+            </h1>
+        </div>
+        <div class="main-description">
+            <div class="thanksdescritpion">
+
+            <p data-animation="slideInUp">
+               {{thanks.description}}
+            </p>
+            {% endfor %}
+        </div>
+
+        </div>
+        <br />
+       <p class="thankbtn" data-animation="scaleUp"><a href="/"><button class="btn thtbn"> <span class="btn_txt" style="color: #fff;">Back to Home</span> </button></a> </p>
+    </div>
+</div>
+{% endblock maincontent %}

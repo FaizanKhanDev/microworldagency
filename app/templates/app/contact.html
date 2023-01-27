@@ -1,0 +1,148 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Contact Us {% endblock %}
+
+{% block services %} 
+{% endblock services %}     
+{% block portfliocss %}
+{% endblock portfliocss %}          
+{% block maincontent %}
+
+ <!-- === contact section one  ==== -->
+ 
+{% for contactBg in contactBg %}
+    <section class="about-wrap" style="background-image: url({{contactBg.img.url}});">
+        <div class="video-bg">
+          <iframe src="https://www.youtube.com/embed/{{contactBg.video}}?autoplay=1&mute=1&playsinline=1&loop=1&playlist={{contactBg.video}}&controls=0&disablekb=1"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
+        </div>
+        <div class="about-content">
+          <div class="about-container">
+            {% for contacttitle in contacttitle %}
+              <h1 class="about-title" data-animation="slideInUp">{{contacttitle.title}}</h1>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+{% endfor %}
+  <!-- === contact section one  ==== -->
+  <!-- === contact section two  ==== -->
+  <div class="maincontactPage">
+    <div class="contact-subgird">
+      {% for contactHoverEffect in contactHoverEffect %}
+        <a href="">
+            <div class="contact-grid-sec_1">
+                <div>
+                    <div class="contact-hover" data-animation="slideInUp">
+                      {% for contactIcons in contactIcons %}
+                      <img src="{{contactIcons.icon1.url}}" alt="">  
+                        {% endfor %}  
+                         <h5>{{contactHoverEffect.title1}}</h5>
+                         <p>{{contactHoverEffect.description1}}
+                        </p>
+                    </div>
+                    
+                </div>
+               
+            </div>
+       </a>
+        <a href="">
+            <div class="contact-grid-sec_1">
+                <div>
+                    <div class="contact-hover" data-animation="slideInUp" data-animation-delay="0.2s">
+                      {% for contactIcons in contactIcons %}
+                         <img src="{{contactIcons.icon2.url}}" alt="">  
+                      {% endfor %}  
+                         <h5> {{contactHoverEffect.title2}}</h5>
+                         <p>{{contactHoverEffect.description2}}
+                        </p>
+                    </div>
+                    
+                </div>
+               
+            </div>
+       </a>
+        <a href="">
+            <div class="contact-grid-sec_1">
+                <div>
+                    <div class="contact-hover" data-animation="slideInUp" data-animation-delay="0.3s">
+                        {% for contactIcons in contactIcons %}
+                          <img src="{{contactIcons.icon3.url}}" alt="">  
+                        {% endfor %}  
+                         <h5>{{contactHoverEffect.title1}}</h5>
+                         <p>{{contactHoverEffect.description1}}</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+  </div>
+  <!-- === contact section two  ==== -->
+   <!-- === services section five  ==== -->
+   <div class="skill-section">
+    <div class="skill-section-1 services-img">
+      {% for contactImg in contactImg %}
+        <img src="{{contactImg.img.url}}" alt="">
+      {% endfor %}
+    </div>
+    <div class="OurContactform">
+      <div class="ourmaincontactform">
+        <div class="ourcontactform-title">
+          {% for contactPhoneAndEmail in contactPhoneAndEmail %}
+            <div> 
+              <h2 data-animation="slideInDown" >{{contactPhoneAndEmail.title}}</h2>
+              <div class="descriptionofourmaincontact">
+                <p data-animation="slideInUp" >{{contactPhoneAndEmail.description}}</p>
+              </div>
+            </div>
+        </div>
+     
+
+        <div class="ourContactdetail">
+            <a href="https://wa.me/{{contactPhoneAndEmail.PhoneNumberUrl}}" data-animation="scaleUp" target="_blank">
+              <ion-icon name="call"></ion-icon>
+              <p>{{contactPhoneAndEmail.PhoneNumber}}</p>
+            </a> 
+            <a href="mailto:{{contactPhoneAndEmail.email}}" data-animation="scaleUp">
+              <ion-icon name="mail"></ion-icon>
+              <p>{{contactPhoneAndEmail.email}}</p>
+            </a>
+        </div>
+        {% endfor %}
+
+          <div class="ourMainform">
+            <form action="" class="ourMainActionForm" method="POST">
+              {% csrf_token %}
+              {% for form in form  %}
+                 {{form}} {{form.error|striptags}}
+              {% endfor %}
+              <button type="submit" class="btn submitbtn"><span class="btn_txt">SEND MESSAGE</span> </button>
+            </form>
+          </div>
+      </div>
+    </div>
+  </div>
+<!-- === services section five  ==== -->
+<!-- === services section six  ==== -->
+{% for contactLastsection in contactLastsection %}
+  <div class="letdiscuss">
+  <div class="discus-title about-discuss">
+    <h1 data-animation="slideInDown">
+      {{contactLastsection.title}}
+    </h1>
+    <p><a href="{% url 'contactus' %}"><button class="btn discuss-btn" data-animation="scaleUp"><span class="btn_txt">Get Started</span></button></a></p>
+  </div>
+  </div>
+{% endfor %}
+<!-- === services section six  ==== -->
+
+
+{% endblock maincontent %}
+
+
+{% block meter %}
+{% endblock meter %}
+{% block  portfolio %}  
+{% endblock portfolio %}  
+
+

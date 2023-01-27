@@ -1,0 +1,141 @@
+{% extends 'app/base.html' %}
+{% load  static %}
+{% block title %}FAQ?{% endblock %}
+
+{% block portfliocss %}
+{% endblock portfliocss %}
+
+   {% block maincontent %}
+    <!-- === faq section ==== -->
+        <div class="faqhome">
+            {% for faqTitle in faqTitle %}
+                <div class="fag-content">
+                    <div>
+                        <h1>{{faqTitle.title}}</h1>
+                        <div class="faqmain-des">
+                            <p>{{faqTitle.description}}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+    <!-- === faq section ==== -->
+
+    <div class="mainfaq-grid">
+    <section class='faq'>
+        <div class='item-container'>
+            {% for faqQuestion in faqQuestion %}
+                <div class='item'>
+                    <div>   
+                        <h6 class='qus'>{{faqQuestion.title}}</h6>
+                        <p class='ans hide'>
+                            {{faqQuestion.description}}
+                        </p>
+                    </div>
+                </div>
+            {% endfor %}
+            <!-- <div class='item'>
+                <h6 class='qus'>1. Versticile hosting Plan </h6>
+                <p class='ans hide'>
+                    Tincidunt elit magnis nulla facilisis. Dolor sagittis maecenas. Sapien nunc amet ultrices, dolores sit ipsum velit purus aliquet, massa fringilla leo orci.
+                </p>
+            </div> -->
+            <!-- <div class='item'>
+                <h6 class='qus'>2. Capability And With Premium Plugins.</h6>
+                <p class='ans hide'>
+                    Tincidunt elit magnis nulla facilisis. Dolor sagittis maecenas. Sapien nunc amet ultrices, dolores sit ipsum velit purus aliquet, massa fringilla leo orci.
+                </p>
+            </div> -->
+            <!-- <div class='item'>
+                <h6 class='qus'>3.Install theme And Content</h6>
+                <p class='ans hide'>
+                    Tincidunt elit magnis nulla facilisis. Dolor sagittis maecenas. Sapien nunc amet ultrices, dolores sit ipsum velit purus aliquet, massa fringilla leo orci.
+                    <br><br>
+                   
+                </p>
+            </div> -->
+            <!-- <div class='item'>
+                <h6 class='qus'>4. Grapics designing </h6>
+                <p class='ans hide'>
+                    Tincidunt elit magnis nulla facilisis. Dolor sagittis maecenas. Sapien nunc amet ultrices, dolores sit ipsum velit purus aliquet, massa fringilla leo orci.
+                </p>
+            </div> -->
+            <!-- <div class='item'>
+                <h6 class='qus'>5. Web Development</h6>
+                <p class='ans hide'>
+                    Tincidunt elit magnis nulla facilisis. Dolor sagittis maecenas. Sapien nunc amet ultrices, dolores sit ipsum velit purus aliquet, massa fringilla leo orci.
+                </p>
+            </div> -->
+            <!-- <div class='item hide'>
+                <p class='qus'>6.</p>
+                <p class='ans hide'>
+                    Tincidunt elit magnis nulla facilisis. Dolor sagittis maecenas. Sapien nunc amet ultrices, dolores sit ipsum velit purus aliquet, massa fringilla leo orci.
+                </p>
+            </div> -->
+            <!-- <div class='item hide'>
+                <p class='qus'>7.</p>
+                <p class='ans hide'> Tincidunt elit magnis nulla facilisis. Dolor sagittis maecenas. Sapien nunc amet ultrices, dolores sit ipsum velit purus aliquet, massa fringilla leo orci.
+                </p>
+            </div> -->
+            <!-- <div class='item hide'>
+                <p class='qus'>8. </p>
+                <p class='ans hide'> Tincidunt elit magnis nulla facilisis. Dolor sagittis maecenas. Sapien nunc amet ultrices, dolores sit ipsum velit purus aliquet, massa fringilla leo orci.
+                    <br><br>
+                    Tincidunt elit magnis nulla facilisis. Dolor sagittis maecenas. Sapien nunc amet ultrices, dolores sit ipsum velit purus aliquet, massa fringilla leo orci.
+                </p>
+            </div> -->
+            <!-- <div class='item hide'>
+                <p class='qus'>9. .</p>
+                <p class='ans hide'> Tincidunt elit magnis nulla facilisis. Dolor sagittis maecenas. Sapien nunc amet ultrices, dolores sit ipsum velit purus aliquet, massa fringilla leo orci.
+                </p>
+            </div> -->
+            <!-- <div class='item hide'>
+                <p class='qus'>10.</p>
+                <p class='ans hide'> Tincidunt elit magnis nulla facilisis. Dolor sagittis maecenas. Sapien nunc amet ultrices, dolores sit ipsum velit purus aliquet, massa fringilla leo orci.
+                </p>
+            </div> -->
+        </div>
+        <div class='menu'>
+            <p>+ More</p>
+        </div>
+    </section>
+    {% for faqLeftQuestions in faqLeftQuestions %}
+        <div class="faq-Question">
+            <div>
+                <h3>{{faqLeftQuestions.title1}}</h3>
+                <p>{{faqLeftQuestions.description1}}</p>
+                <a href="{% url 'aboutus' %}">
+                    <button type="button" class="btn faqbtn"><span class="btn_txt faqtxt">ABOUT US</span></button>
+                </a>
+            </div>
+            <div>
+                <h3>{{faqLeftQuestions.title2}}</h3>
+                <p>{{faqLeftQuestions.description2}}</p>
+                <a href="{% url 'contactus' %}">
+                    <button type="button" class="btn faqbtn"><span class="btn_txt faqtxt">CONTACT US</span></button>
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+    
+<!-- ===== letdiscuss  Section ===== --> 
+{% for faqLastsection in faqLastsection %}  
+    <div class="letdiscuss">
+        <div class="discus-title">
+            <h1 data-animation="slideInUp">{{faqLastsection.title}}</h1>
+            <p><a href="{% url 'contactus' %}"><button class="btn discuss-btn"  data-animation="scaleUp"><span class="btn_txt">Start Project</span></button></a></p>
+        </div>
+    </div>
+{% endfor %}
+
+  {% endblock maincontent %}
+
+  {% block meter %}
+  {% endblock meter %}
+  {% block  portfolio %}  
+  {% endblock portfolio %}  
+
+
+

@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Barlow:wght@300&family=Montserrat:wght@300;600;700;900&family=Open+Sans:wght@300;500&display=swap');
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Open Sans;
+    box-sizing: border-box;
+}
+:root {
+    --primary-white: #fff;
+    --fontweight-500: 600;
+    --primary-bg: #b558fe;
+    --primary-black: #000;
+    --primary-grey:#838383;
+}
+html {
+    font-size: 20px;
+    scroll-behavior: smooth;
+}
+a {
+    text-decoration: none;
+}
+/* ==== footer =====  */
+footer {
+    height: 350px;
+    width: 100%;
+    background-color: #000;
+    background-attachment: fixed;
+}
+
+.footer-socialicons {
+    display: grid;
+    grid-template-columns: repeat(4,50px);
+    padding: 10px;
+    justify-content: center;
+}
+.footer-socialicons ion-icon {
+    color: var(--primary-white);
+    font-size: 1.2rem;
+}
+.footer-socialicons a ion-icon {
+    border: 1px solid rgba(211, 205, 205, 0.319);
+    border-radius: 50px;
+    padding: 10px;
+    transition: 0.3s;
+}
+.footer-socialicons a ion-icon:hover {
+    background-color: var(--primary-bg);
+}
+.footer-line {
+    width: 100%;
+    height: 0.8px;
+    background-color:  rgba(211, 205, 205, 0.319);
+
+    
+}
+.footer-con {
+    display: grid;
+    grid-template-columns: repeat(4,285px);
+    justify-content: center;
+    margin-top: 30px;
+
+}
+
+.footer-sec-1 h6 a {
+    color: var(--primary-white);
+    line-height: 1.6rem;
+    font-size: 0.6rem;
+    transition: 0.3s;
+
+}
+.footer-sec-1 h6 a:hover {
+    color: var(--primary-bg);
+}
+.footer-sec-1 p {
+    width: 300px;
+    color: var(--primary-white);
+    font-size: 0.7rem;
+    font-weight: 200;
+    line-height: 1.5rem;
+}
+@media(min-width:260px) and (max-width: 659px) {
+    footer {
+        height: auto;
+    }
+        .footer-con {
+            display: grid;
+            grid-template-columns: 200px;
+            justify-content: start;
+            margin-top: 30px;
+            row-gap: 50px;
+            margin-left: 50px;
+
+    }
+}
+@media(min-width:660px) and (max-width:1100px) {
+    footer {
+        height: auto;
+    }
+        .footer-con {
+            display: grid;
+            grid-template-columns: repeat(2,200px);
+            justify-content: center;
+            margin-top: 30px;
+            row-gap: 50px;
+
+    }
+}
+/* ==== footer =====  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,153 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Our Portfolio {% endblock %}
+
+{% block maincontent %}
+<!-- ==== blog first Section ==== -->
+
+<div class="portfoliobg">
+  {% for porftoliotitle in porftoliotitle %}
+    <div class="blog-home-section">
+        <div>
+            <h1 data-animation="slideInUp">{{porftoliotitle.title}}
+            </h1>
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+    <div class="blog-categoryheader">
+            <ul>
+              <input type="checkbox" id="category-Wise">
+              <label for="category-Wise" class="categoryWise">
+                  <div class="category-menu" onclick="category(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                  </div>
+              </label>
+                <ul class="categoreyul">
+                  <li {% if request.path == '/portfolio/' %} class="categoryactive" {% endif %}><a href="{% url 'portfolio' %}">All</a></li>
+                  <li {% if request.path == '/portfolio/graphicsdesign/' %} class="categoryactive" {% endif %}><a href="{% url 'portfoliofilteration' 'graphicsdesign' %}" >Graphic Design</a></li>
+                  <li {% if request.path == '/portfolio/webdevelopment/' %} class="categoryactive" {% endif %}><a href="{% url 'portfoliofilteration' 'webdevelopment' %}">Web Development</a></li>
+                  <li {% if request.path == '/portfolio/videoediting/' %} class="categoryactive" {% endif %}><a href="{% url 'portfoliofilteration' 'videoediting' %}">Video Editing</a></li>
+                  <li {% if request.path == '/portfolio/seosem/' %} class="categoryactive" {% endif %}><a href="{% url 'portfoliofilteration' 'seosem' %}"          >SEO/SEM</a></li>
+                  <li {% if request.path == '/portfolio/contentwriting/' %} class="categoryactive" {% endif %}><a href="{% url 'portfoliofilteration' 'contentwriting' %}"  >Content Writing</a></li>
+                  <li {% if request.path == '/portfolio/digitalmarketing/' %} class="categoryactive" {% endif %}><a href="{% url 'portfoliofilteration' 'digitalmarketing' %}" >Digital Marketing</a></li>
+                </ul>
+               
+            </ul>
+    </div>
+    
+    <!-- ==== images Gallery ==== -->
+    <section class="section">
+        <div class="grid">
+          {% for porftolioCategorie in alldata %}
+              <div class="item {{porftolioCategorie.className}}" data-animation="scaleUp" onclick="openFullscreen(this);" style="background-image: url({{porftolioCategorie.img.url}});">
+                <div class="item__details">
+                  <p> {{porftolioCategorie.title}}
+                   
+                  {% if porftolioCategorie.category == 'videoediting' %}
+                  <br />
+                    <a href="{{porftolioCategorie.visitUrl}}" style="color: var(--primary-black); font-weight: 800;">
+                      {{porftolioCategorie.visititle}}
+                    </a>
+                  {% else %}
+                 <a href="" style="display: none;">faizan</a> 
+                  {% endif %}
+                  </p>
+                </div>
+              </div>
+            {% endfor %}
+            
+  <script>
+    function openFullscreen(elem) {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.mozRequestFullScreen) { /* Firefox */
+    elem.mozRequestFullScreen();
+  } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE/Edge */
+    elem.msRequestFullscreen();
+  }
+}
+  </script>
+
+            <!-- <div class="item item--large" data-animation="scaleUp" style="background-image: url(assets/images/portfolio-12-683x1024.jpg);">
+              <div class="item__details">
+                <p> Graphics Designing And Branding</p>
+              </div>
+            </div> -->
+            <!-- <div class="item item--medium" data-animation="scaleUp" style="background-image: url(assets/images/portfolio3sqare-1024x1024.jpg);">
+              <div class="item__details">
+                <p>Video Editing</p>
+              </div>
+            </div> -->
+            <!-- <div class="item item--large"  data-animation="scaleUp" style="background-image: url(assets/images/portfolio-16-683x1024.jpg);">
+              <div class="item__details">
+                <p>Animations</p>
+              </div>
+            </div> -->
+            <!-- <div class="item item--medium" data-animation="scaleUp" style="background-image: url(assets/images/portfolio-16-683x1024.jpg);">
+              <div class="item__details">
+                <p>Content Writing</p>
+              </div>
+            </div> -->
+            <!-- <div class="item item--large"  data-animation="scaleUp" style="background-image: url(assets/images/portfolio-12-683x1024.jpg);">
+              <div class="item__details">
+                <p>Digital Marketing</p>
+              </div>
+            </div> -->
+            <!-- <div class="item item--medium" data-animation="scaleUp" style="background-image: url(assets/images/portfolio3sqare-1024x1024.jpg);">
+              <div class="item__details">
+                <p>Social Media Marketing</p>
+              </div>
+            </div> -->
+            <!-- <div class="item item--medium" data-animation="scaleUp" style="background-image: url(assets/images/portfolio2sqare-1024x1024.jpg);">
+              <div class="item__details">
+                <p>Graphics Designing</p>
+              </div>
+            </div> -->
+            <!-- <div class="item item--large"  data-animation="scaleUp" style="background-image: url(assets/images/portfolio-12-683x1024.jpg);">
+              <div class="item__details">
+                <p>SEO/SEM</p>
+              </div>
+            </div> -->
+            <!-- <div class="item item--large"  data-animation="scaleUp" style="background-image: url(assets/images/portfolio3sqare-1024x1024.jpg);">
+              <div class="item__details">
+                <p>UI/UX/CX</p>
+              </div>
+            </div> -->
+            <!-- <div class="item item--medium" data-animation="scaleUp" style="background-image: url(assets/images/portfolio-11-683x1024.jpg);">
+              <div class="item__details">
+                <p>Gaming</p>
+              </div>
+            </div> -->
+            <!-- <div class="item item--medium" data-animation="scaleUp" style="background-image: url(assets/images/portfolio3sqare-1024x1024.jpg);">
+              <div class="item__details">
+                <p>Screen Issue</p>
+              </div>
+            </div> -->
+            <!-- <div class="item item--large"  data-animation="scaleUp" style="background-image: url(assets/images/portfolio2sqare-1024x1024.jpg);">
+              <div class="item__details">
+                <p>Resolution Issue</p>
+              </div>
+            </div> -->
+            
+        </div>
+      </section>
+    
+    <!-- ==== images Gallery ==== -->
+    {% for porftolioSection in porftolioSection %}
+      <div class="letdiscuss">  
+        <div class="discus-title">
+            <h1 data-animation="slideInUp">
+                {{porftolioSection.title}}
+            </h1>
+            <p><a href=""><button class="btn discuss-btn"  data-animation="scaleUp"><span class="btn_txt">Start Project</span></button></a></p>
+      
+        </div>
+      </div>
+    {% endfor %}
+{% endblock maincontent %}
+

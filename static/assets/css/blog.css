@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Barlow:wght@300&family=Montserrat:wght@300;600;700;900&family=Open+Sans:wght@300;500&display=swap');
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Open Sans;
+    box-sizing: border-box;
+}
+:root {
+    --primary-white: #fff;
+    --fontweight-500: 600;
+    --primary-bg: #b558fe;
+    --primary-black: #000;
+    --primary-grey:#838383;
+}
+html {
+    font-size: 20px;
+    scroll-behavior: smooth;
+}
+a {
+    text-decoration: none;
+}
+#blogform {
+    display: flex;
+    justify-content: center;
+    margin-left: 45px;
+}
+#blogemail {
+    border: none;
+    font-weight: 900 !important;
+    background-color: var(--primary-white);
+    color: var(--primary-black);
+    width: 350px;
+    line-height: 4rem;
+    border-bottom-right-radius: 40px;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+#blogbtn {
+    position: relative;
+    background-color: var(--primary-bg);
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    height: 50px;
+    width: 130px;
+    left: -5px;
+}
+
+#blogbtn:hover .btn_txt {
+    color: var(--primary-white) !important;
+}
+.btn:hover::before {
+    border-radius: 0px !important;
+    border: 2px solid var(--primary-black);
+}
+.blog-categorey {
+    height: auto;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+.blog-categorey h2 {
+    width: 65%;
+    color: var(--primary-black);
+    text-align: center;
+    transition: all 0.3s;
+}   
+.blog-title {
+    display: flex;
+    justify-content: center;
+
+}
+.date {
+    text-align: center;
+    color: var(--primary-black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+.blog-title:hover h2 {
+    color: var(--primary-bg) !important;
+
+}
+.blogicon {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 30px;
+}
+.date ion-icon {
+    transition: 0.3s;
+    color: var(--primary-bg) !important;
+    margin-right: 10px;
+
+}
+.date {
+    margin: 20px;
+}
+.date span {
+    transition: 0.3s;
+    color: var(--primary-grey);
+    font-size: 0.7rem;
+}
+
+.date:hover  span {
+    color: var(--primary-bg) !important;
+
+}
+.blogimg {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 10px;
+}
+.blogimg img {
+    width: 100%;
+}
+.blogimg p {
+    font-size: 0.8rem;
+    line-height: 1.3rem;
+    color: var(--primary-grey);
+}
+.blog-categorey button {
+    margin-top: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+.blog-categorey button ion-icon {
+    position: relative;
+    top: 1px;
+    left: 10px;
+}
+@media(min-width:450px) and (max-width:550px) {
+    #blogemail {
+        border: none;
+        font-weight: 900 !important;
+        background-color: var(--primary-white);
+        color: var(--primary-black);
+        width: 264px;
+        line-height: 4rem;
+        border-bottom-right-radius: 40px;
+        border-top-right-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+    }
+}
+@media(min-width:250px) and (max-width:449px) {
+    #blogemail {
+        width: 175px;
+    }
+    #blogbtn {
+        width: 100px;
+    }
+}
+@media(min-width:650px) and (max-width:800px) {
+    .blog-categorey h2 {
+        font-size: 1.3rem;
+    }
+    .blog-categorey button {
+        margin-left: 15px;
+    }
+}
+@media(min-width:500px) and (max-width:649px) {
+    .blog-categorey h2 {
+        font-size: 1rem;
+    }
+    .blog-categorey button {
+        margin-left: 15px;
+    }
+  
+}
+@media(min-width:200px) and (max-width:499px) {
+    .blog-categorey h2 {
+        font-size: 1rem;
+        line-height: 1.2rem;
+    }
+    .blogicon {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .blog-categorey button {
+        margin-left: 15px;
+    }
+}
+@media(min-width:200px) and (max-width:390px) {
+    .blog-categorey h2 {
+        font-size: 1rem;
+        line-height: 2rem;
+    }
+  
+    .blogimg p {
+        font-size: 0.7rem;
+        line-height: 1rem;
+        color: var(--primary-grey);
+    }
+    .blog-categorey button {
+        margin-left: 15px !important;
+    }
+
+
+}

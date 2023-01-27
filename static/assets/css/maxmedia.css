@@ -1,0 +1,236 @@
+@media(min-width:1460px) and (max-width:1921px){
+    .services-main-con-1 {
+        grid-template-columns: repeat(2,1000px);
+        justify-content: center;
+    }
+    .services-main-con-2 {
+        grid-template-columns: repeat(2,1000px);
+        justify-content: center;
+    }
+    .skill-section {
+        grid-template-columns: 1000px 1000px;
+    }
+    .services-description p {
+        width: 60%;
+        position: relative;
+        top: 20px;
+    }
+    .skill-section-2 {
+        justify-content: center;
+        width: 115%;
+    }
+    
+
+    
+    .services-category-icons ion-icon {
+        left: -20px;
+        font-size: 3rem;
+        top: -15px;
+    }
+    a .hover-effects {
+        padding: 20px 60px;
+    }
+    .subhover {
+        margin-top: 30px;
+        margin-left: -20px;
+    }
+    .services-contactus {
+        margin-left: 85px;
+    }
+    .services-getstarted {
+        margin-left: 50px;
+    }
+    .servicesmain-sub p {
+        margin-left: 0px;
+        position: relative;
+        /* top: -27px; */
+        width: 335px;
+        left: 50px;
+    }
+    .review-sec {
+        width: 35%;
+        text-align: center;
+    }
+    .review-sec p {
+        line-height: 1.2rem;
+    }
+   .services-yourname {
+    width: 450px;
+   }
+   .services-email {
+        width: 450px;
+
+   }
+   .services-message {
+     width: 450px;
+
+   }
+   .services-message {
+     width: 450px;
+
+   } 
+   
+   .Xlcontact {
+    margin-left: 35px !important;
+    }
+}
+@media(min-width:2049px) and (max-width:2500px){
+    .services-main-con-1 {
+        grid-template-columns: repeat(2,1015px);
+        justify-content: center;
+    }
+    .services-main-con-2 {
+        grid-template-columns: repeat(2,1015px);
+        justify-content: center;
+    }
+    .skill-section {
+        grid-template-columns: repeat(2,1015px);
+    }
+}
+@media(min-width:2732px) and (max-width:3500px){
+    .services-main-con-1 {
+        grid-template-columns: repeat(2,1500px);
+        justify-content: center;
+    }
+    .services-main-con-2 {
+        grid-template-columns: repeat(2,1500px);
+        justify-content: center;
+    }
+    .skill-section {
+        grid-template-columns: 1500px 1500px;
+    }
+}
+
+@media(min-width:3501px) and (max-width:15000px){
+    .services-main-con-1 {
+        grid-template-columns: repeat(2,3000px);
+        justify-content: center;
+        grid-template-rows: 800px;
+        overflow: hidden;
+
+    }
+    .services-main-con-2 {
+        grid-template-columns: repeat(2,3000px);
+        justify-content: center;
+        grid-template-rows: 800px;
+        overflow: hidden;
+
+    }
+   
+    .forXl {
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 150px;
+
+
+    }
+    .forxl {
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 350px;
+    }
+    .skill-section {
+        grid-template-columns: repeat(2,3000px);
+        grid-template-rows: 800px;
+        overflow: hidden;
+    }
+    .skill-section-2 {
+        justify-content: center;
+    }
+    .message {
+        height: 100px;
+    }
+    
+}
+.message {
+    height: 100px;
+}
+form {
+    margin-top: 0px !important;
+}
+
+
+@media (min-width:1351px) and (max-width:1366px) {
+    .services-main-sec-1 img {
+        width: auto;
+        height: 700px;
+    }
+}
+@media(min-width:300px) and (max-width:550px) {
+    .services-img img {
+        height: auto !important;
+    }
+    .services-getstarted {
+        margin-left: -81px;
+    }
+    .skill-section-2 h1 {
+        margin-left: -35px;
+    }
+    .services-description p {
+        margin-left: 48px;
+    }
+    .services-details a {
+        width: 214px;
+        margin-left: 50px;
+    }
+    form {
+        display: grid;
+        margin-left: 50px;
+    }
+    .services-yourname {
+        width: 250px;
+
+    }
+
+    .services-email {
+        width: 250px;
+    }
+    textarea {
+        width: 250px;
+
+    }
+    .sendmessage {
+        width: 250px;
+    }
+}
+@media(min-width:300px) and (max-width:900px) {
+    .services-get {
+        margin-left: 136px;
+    }
+    .skill-section-2 h1 {
+        margin-left: 150px;
+    }
+    .services-description p {
+        margin-top: 5px;
+        margin-left: 10px !important;
+        width: 390px;
+        position: relative;
+        top: 10px;
+    }
+    .services-img img {
+        height: auto !important;
+    }
+}
+@media(min-width:200px) and (max-width:400px) {
+    .skill-section-2 h1 {
+        margin-left: 120px;
+    }
+    .responsive-contact {
+        position: relative;
+        right: 140px;
+    }
+    
+
+    .services-description p {
+        margin-top: 5px;
+        margin-left: 54px !important;
+        width: 312px;
+        position: relative;
+        top: 0;
+        left: 40px;
+    }
+    .services-ct-res {
+        position: relative;
+        left: 40px;
+    }
+}

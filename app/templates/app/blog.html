@@ -1,0 +1,99 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Our Blog {% endblock %}
+
+{% block blogdetail %}
+{% endblock %}
+{% block portfliocss %}
+{% endblock portfliocss %}
+{% block maincontent %}
+
+<!-- === blog section one  ==== -->
+
+
+<section class="about-wrap">
+    <div class="video-bg">
+    </div>
+    <div class="about-content">
+      <div class="about-container">
+          {% for blogtitle in blogtitle %}
+            <h1 class="about-title" data-animation="slideInUp">
+                {{blogtitle.title}}
+            </h1>
+            {% endfor %}
+             <form action="" id="blogform" method="POST" data-animation="slideInUp" data-animation-delay="0.2s">
+                {% csrf_token %}
+                <div>
+                    {% for subscribe in subscribe %}
+                        {{subscribe}}
+                    {% endfor %}
+                <button type="submit" class="btn" id="blogbtn"><span class="btn_txt">Subscribe</span></button>
+                </div>
+            </form>
+      </div>
+    </div>
+  </section>
+  
+  <!-- === blog section one  ==== -->
+  <!-- === blog section two  ==== -->
+  <div class="blog-categorey">
+    <div>
+    {% for mainBlog in mainBlog %}
+        <a href="{% url 'blogdetail' mainBlog.id %}">
+            <div>   
+                <div class="blog-title">
+                    <h2 data-animation="slideInDown">{{mainBlog.title}}</h2> 
+                </div>
+                <div class="blogicon">
+                    <p class="date"><ion-icon name="time-outline"></ion-icon><span>{{mainBlog.date}}</span></p>  
+                </div>
+
+
+        
+            </div>  
+            <div class="blogimg" data-animation="slideInUp">
+                <img src="{{mainBlog.img.url}}" alt="">
+            </div>
+            <div class="blogimg" >
+                
+                <p>{{mainBlog.Shortdescription}}</p>
+            </div>
+        <p><button>Read More <ion-icon name="chevron-forward-outline"></ion-icon></button></p>  
+        </a>
+        <br />
+        <br />
+        <br />
+        <br />
+    {% endfor %}
+    
+  
+    
+</div>
+
+   
+
+ 
+  </div>
+
+  <!-- === blog section two  ==== -->
+
+
+
+  <div class="letdiscuss">
+    
+    <div class="discus-title">
+        <h1 data-animation="slideInUp">Let's discuss your project
+            and make something awesome
+        </h1>
+        <p><a href="{% url 'contactus' %}"><button class="btn discuss-btn"  data-animation="scaleUp"><span class="btn_txt">Start Project</span></button></a></p>
+
+    </div>
+  </div>
+
+
+
+{% endblock maincontent %}
+{% block meter %}
+{% endblock meter %}
+{% block  portfolio %}  
+{% endblock portfolio %}  

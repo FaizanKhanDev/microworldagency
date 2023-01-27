@@ -1,0 +1,99 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Our Privacy & Policy {% endblock %}
+
+{% block portfliocss %}
+{% endblock portfliocss %}
+
+      {% block maincontent %}
+
+<!-- === privacy Section One ==== -->
+{% for privacyBg in privacyBg %}
+    <div class="privacybg" style="background-image: url({{privacyBg.img.url}});">
+        {% for privacyTitle in privacyTitle %}
+            <div class="privacy-title">
+                <h1 data-animation="slideInUp">{{privacyTitle.title1}}<br />
+            <span>{{privacyTitle.title2}}</span></h1>
+            </div>
+        {% endfor %}
+    </div>
+{% endfor %}
+    <div class="privacy-content">
+        <div>
+            {% for privacySectionOne in privacySectionOne %}
+                <div class="privacy-sec-1">
+                    <h3>{{privacySectionOne.title}}</h3>
+                    <p>{{privacySectionOne.description1}}
+                    </p>
+                    <p class="description-2">
+                        {{privacySectionOne.description2}}
+                    </p>
+                </div>
+            {% endfor %}
+            {% for privacySectionTwo in privacySectionTwo %}
+                <div class="privacy-sec-1">
+                    <h3>{{privacySectionTwo.title}}</h3>
+                    <p>{{privacySectionTwo.description1}}
+                    </p>
+                    <ul>
+                        <li>{{privacySectionTwo.description2}}</li>
+                        <li>{{privacySectionTwo.description3}}</li>
+                        <li>{{privacySectionTwo.description4}}</li>
+                        <li>{{privacySectionTwo.description5}}</li>
+                       
+                    </ul>
+                </div>
+            {% endfor %}
+            {% for privacySectionthree in privacySectionthree %}
+                <div class="privacy-sec-1">
+                    <h3>{{privacySectionthree.title}}</h3>
+                    <p>{{privacySectionthree.description1}}</p>
+                    <p>{{privacySectionthree.description2}}</p>
+                    <p class="description-2">{{privacySectionthree.description3}}</p>
+                </div>
+            {% endfor %}
+            {% for privacySectionFour in privacySectionFour %}
+                <div class="privacy-sec-1">
+                    <h3>{{privacySectionFour.title}}</h3>
+                    <p>{{privacySectionFour.description1}}</p>
+                    <p>{{privacySectionFour.description2}}</p>
+                    
+                    <p class="description-2">{{privacySectionFour.description3}}</p>
+                </div>
+            {% endfor %}
+            {% for privacySectionfifth in privacySectionfifth %}  
+                <div class="privacy-sec-1">
+                    <h3>{{privacySectionfifth.title}}</h3>
+                    <p class="description-2">{{privacySectionfifth.description1}}
+                    </p>
+                    
+                </div>
+            {% endfor %}
+            {% for privacySectionSixth in privacySectionSixth %}
+                <div class="privacy-sec-1">
+                    <h3>{{privacySectionSixth.title}}</h3>
+                    <p>{{privacySectionSixth.description1}}</p>
+                </div>
+            {% endfor %}
+    </div>
+    </div>
+
+
+<!-- === privacy Section One ==== -->
+
+{% for privacyLastsection in privacyLastsection %}
+    <div class="letdiscuss">
+        <div class="discus-title">
+            <h1 data-animation="slideInUp">{{privacyLastsection.title}}</h1>
+            <p><a href="{% url 'contactus' %}"><button class="btn discuss-btn"  data-animation="scaleUp"><span class="btn_txt">Start Project</span></button></a></p>
+
+        </div>
+    </div>
+{% endfor %}
+<!-- ===== Seven home Section ===== -->   
+
+
+    {% endblock maincontent %}
+
+<!-- ===== footer  Section ===== -->   
+

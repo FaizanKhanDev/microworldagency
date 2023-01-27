@@ -1,0 +1,61 @@
+
+<!-- ===== footer  Section ===== -->   
+<footer>
+    <div class="footer-socialicons">
+       <a href="https://www.facebook.com/microoworld" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a> 
+       <a href="https://www.instagram.com/wemicroworld/" target="_blank"><ion-icon name="logo-instagram" ></ion-icon></a> 
+       <a href="https://www.linkedin.com/in/micro-world-657a1b253/" target="_blank"><ion-icon name="logo-linkedin" target="_blank"></ion-icon></a> 
+       <a href="https://www.youtube.com/channel/UCOVgBFpgI-keY2rL-eLtWYA"  target="_blank"><ion-icon name="logo-youtube"></ion-icon></a>
+    </div>
+    <div class="footer-line"></div>
+  
+    <div class="footer-con">
+        {% for footersectionOne in footersectionOne %}
+            <div class="footer-sec-1">
+                <ul>
+                    <h6><a href="/">{{footersectionOne.title}}</a></h6>
+                    <h6><a href="{% url 'aboutus' %}">{{footersectionOne.subtitle1}}</a></h6>
+                    <h6><a href="{% url 'services' %}">{{footersectionOne.subtitle2}}</a></h6>
+                    <h6><a href="{% url 'contactus' %}">{{footersectionOne.subtitle3}}</a></h6>
+                    <h6><a href="{% url 'blog' %}">{{footersectionOne.subtitle4}}</a></h6>
+                    <h6><a href="{% url 'portfolio' %}">{{footersectionOne.subtitle5}}</a></h6>
+                </ul>
+            </div>
+        {% endfor %}
+        {% for footersectionThree in footersectionThree %}
+            <div class="footer-sec-1">
+                <ul>
+                    <h6><a href="{% url 'videoediting' %}">{{footersectionThree.title}}</a></h6>
+                    <h6><a href="{% url 'graphicsdesigning' %}">{{footersectionThree.subtitle1}}</a></h6>
+                    <h6><a href="{% url 'webdesigning' %}">{{footersectionThree.subtitle2}}</a></h6>
+                    <h6><a href="{% url 'contentservices' %}">{{footersectionThree.subtitle3}}</a></h6>
+                    <h6><a href="{% url 'digitalmarketing' %}">{{footersectionThree.subtitle4}}</a></h6>
+                    <h6><a href="{% url 'seosem' %}">{{footersectionThree.subtitle5}}</a></h6>
+                </ul>
+            </div>
+        {% endfor %}
+        {% for footersectionTwo in footersectionTwo %}
+            <div class="footer-sec-1">
+               
+                <ul>
+                 
+                    <h6><a href="{% url 'termsandCondition' %}">{{footersectionTwo.subtitle3}}</a></h6>
+                    <h6><a href="{% url 'privacy' %}">{{footersectionTwo.subtitle2}}</a></h6>
+                    <h6><a href="{% url 'FAQ' %}">{{footersectionTwo.subtitle4}}</a></h6>
+                </ul>
+            </div>
+        {% endfor %}
+        {% for footersectionFour in footersectionFour %}
+            <div class="footer-sec-1">
+                <ul>
+                    <h6><a href=""> {{footersectionFour.title}}</a></h6>
+                    <p>
+                        {{footersectionFour.description}}
+                    </p>
+                </ul>
+            </div>
+        {% endfor %}
+    </div>
+</footer>
+
+<!-- ===== footer  Section ===== -->  

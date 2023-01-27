@@ -1,0 +1,5 @@
+@media (min-width: 300px) and (max-width: 900px) {
+    .services-get {
+        margin-left: 110px !important;
+    }
+}

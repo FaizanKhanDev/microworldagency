@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/assets/css/animation.css' %}">
+    <link rel="stylesheet" href="{% static '/assets/css/navbar.css' %}">
+    {% block blogdetail %}
+        <link rel="stylesheet" href="{% static '/assets/css/blogdetail.css' %}">
+    {% endblock %}
+    <link rel="stylesheet" href="{% static '/assets/css/blog.css' %}">
+    <link rel="stylesheet" href="{% static '/assets/css/contactform.css' %}">
+    {% block privacy  %}
+    <link rel="stylesheet" href="{% static '/assets/css/privacy.css' %}">
+    {% endblock privacy  %}
+    {% block contactcss %}
+    <link rel="stylesheet" href="{% static '/assets/css/contact.css' %}">
+    {% endblock contactcss %}   
+    <link rel="stylesheet" href="{% static '/assets/css/faq.css' %}"/>
+    <link rel="stylesheet" href="{% static  '/assets/css/home.css' %}">
+    <link rel="stylesheet" href="{% static  '/assets/css/about.css' %}">
+    {% block services %} 
+    <link rel="stylesheet" href="{% static 'assets/css/services.css' %}">
+    {% block servicesmax %}
+    <link rel="stylesheet" href="{% static 'assets/css/maxmedia.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/maxservices.css' %}">
+    {% endblock servicesmax %}
+    {% endblock services %}               
+    {% block aboutus %} 
+    <link rel="stylesheet" href="{% static  '/assets/css/aboutmedia.css' %}">
+    {% endblock aboutus %} 
+    {% block portfliocss %}
+    <link rel="stylesheet" href="{% static '/assets/css/portdfolio.css' %}">
+    {% endblock portfliocss %}
+    <link rel="stylesheet" href="{% static  '/assets/css/footer.css' %}">
+    {% block contact %}
+    <link rel="stylesheet" href="{% static 'assets/css/customcontact' %}.css">
+    {% endblock contact %}
+    {% block about %}
+    <link rel="stylesheet" href="{% static '/assets/css/aboutmedia.css' %}">
+    {% endblock about %}
+    <link rel="stylesheet" href="{% static '/assets/css/thanks.css' %}">
+
+
+    <!-- ===== Swiper css CDN ==== -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <title>{% block title %}{% endblock %}</title>
+    {% for favicon in favicon %}
+     <link rel="shortcut icon" href="{{favicon.img.url}}" type="image/x-icon">
+    {% endfor %}
+
+</head>
+<body>
+    {% include 'app/navbar.html' %}
+    {% block maincontent %}
+
+
+    {% endblock maincontent %}
+
+
+{% include 'app/footer.html' %}
+
+        <!-- ===== Icons CDN ==== -->
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    {% block jquery %}
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    {% endblock jquery %}
+
+        <script src="{% static 'assets/js/faq.js' %}"></script>
+        <!-- ===== Icons CDN ==== -->
+        <!-- ===== Swiper Js CDN ==== -->
+        <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+        <!-- ==== custom script ==== -->
+        {% if request.path == '/FAQ?/'%}
+             <script src="{% static  'assets/js/customnavbar.js' %}"></script>
+        {% elif request.path == '/portfolio/' %}
+             <script src="{% static  'assets/js/customnavbar.js' %}"></script>
+        {% elif request.path == '/portfolio/graphicsdesign/' %}
+        <script src="{% static  'assets/js/customnavbar.js' %}"></script>
+        {% elif request.path == '/portfolio/webdevelopment/' %}
+        <script src="{% static  'assets/js/customnavbar.js' %}"></script>
+        {% elif request.path == '/portfolio/videoediting/' %}
+        <script src="{% static  'assets/js/customnavbar.js' %}"></script>
+        {% elif request.path == '/portfolio/seosem/' %}
+        <script src="{% static  'assets/js/customnavbar.js' %}"></script>
+        {% elif request.path == '/portfolio/contentwriting/' %}
+        <script src="{% static  'assets/js/customnavbar.js' %}"></script>
+        {% elif request.path == '/portfolio/digitalmarketing/' %}
+        <script src="{% static  'assets/js/customnavbar.js' %}"></script>
+        {% else %}
+        <script src="{% static 'assets/js/navbar.js' %}"></script>
+        {% endif %}
+        <script src="{% static  'assets/js/main.js' %}"></script>
+        {% block meter %}
+             <script src="{% static  'assets/js/meter.js' %}"></script>
+        {% endblock meter %}
+        {% block  portfolio %}  
+            <script src="{% static 'assets/js/portfolio.js' %}"></script>
+        {% endblock portfolio %}  
+        <script src="{% static  'assets/js/animation.js' %}"></script>
+        <!-- ==== custom script ==== -->
+    
+</body>
+</html>

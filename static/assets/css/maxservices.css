@@ -1,0 +1,19 @@
+@media(min-width:399px) and (max-width:750px) {
+    .skill-section-2 h1 {
+        margin-left: 25px;
+    }
+    .services-get {
+        margin-left: 25px !important;
+    }
+    .services-description p {
+        margin-left: -6px !important;
+    }
+}
+@media(min-width:410px) and (max-width:550px) {
+    .skill-section-2 h1 {
+        margin-left: 0px;
+    }
+    .services-description p {
+        margin-left: 50px !important;
+    }
+}

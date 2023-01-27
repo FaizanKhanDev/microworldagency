@@ -1,0 +1,254 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %} About Us {% endblock %}
+{% block privacy  %}
+{% endblock privacy  %}
+{% block contactcss %}
+{% endblock contactcss %}            
+{% block servicesmax %}
+{% endblock servicesmax %}
+{% block portfliocss %}
+{% endblock portfliocss %}
+{% block maincontent %}
+
+
+
+
+
+<!-- === About section one  ==== -->
+{% for aboutBg in aboutBg %}
+  <section class="about-wrap" style="background-image:url({{aboutBg.img.url}})">
+      <div class="video-bg">
+        <!-- W7YKO3t30Rc  -->
+        <iframe src="https://www.youtube.com/embed/?autoplay=1&mute=1&playsinline=1&loop=1&playlist={{aboutBg.video}}&controls=0&disablekb=1"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <div class="about-content">
+        {% for aboutTitle in aboutTitle %}
+        <div class="about-container">
+            <h1 class="about-title" data-animation="slideInUp">
+            {{aboutTitle.title}}
+            </h1>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+{% endfor %}
+  <!-- === About section one  ==== -->
+  <!-- === About section two  ==== -->
+  {% for aboutSectionTwo in aboutSectionTwo %}
+    <div class="brand-title-responsive">
+      <h1 data-animation="slideInUp">
+        {{aboutSectionTwo.title}}
+      </h1>
+    </div>
+    <div class="brand-section">
+      <div class="brand-title">
+        <h1  data-animation="slideInUp">
+          {{aboutSectionTwo.title}}
+        </h1>
+      </div>
+      <div class="brand-decription">
+        <p data-animation="slideInUp" data-animation-delay="0.2s">
+         {{aboutSectionTwo.description1}}
+        </p>
+      </div>
+      <div class="brand-decription description-2">
+        <p data-animation="slideInUp" data-animation-delay="0.3s">
+          {{aboutSectionTwo.description2}}
+        </p>
+      </div>
+    </div>
+  {% endfor %}
+  <!-- === About section two  ==== -->
+<!-- === About section three  ==== -->
+  <div class="skill-section">
+    <div class="skill-section-1">
+      {% for aboutSectionthree in aboutSectionthree %}
+         <img src="{{aboutSectionthree.img.url}}" alt="">
+      {% endfor %}
+    </div>
+    <div class="skill-section-2">
+      <div>
+        {% for aboutSectionthree in aboutSectionthree %}
+          <h1 data-animation="slideInUp">
+            {{aboutSectionthree.title}}
+          </h1>
+        {% endfor %}
+          <br />
+          <br />
+          <div class="skill-sub-sec">
+            {% for aboutSkill in aboutSkill %}
+              <div class="skills">
+                  <span>{{aboutSkill.skill}}</span>
+                  <div class="skill-bar">
+                    <div class="progress"  data-animation="skillProgress"></div>
+                  </div>
+                  <h6>{{aboutSkill.percentage}}</h6>
+              </div>
+            {% endfor %}
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+<!-- === About section three  ==== -->
+<!-- === About section four  ==== -->
+{% for aboutSectionfour in aboutSectionfour %}
+<div class="home-services about-planning-process">
+    <div class="homeservices-title about-planning">
+        <h1 data-animation="slideInUp">
+          {{aboutSectionfour.title}}
+        </h1>
+        <div class="planning-description" data-animation="slideInDown">
+            <p>
+             {{aboutSectionfour.description}}
+            </p>
+        </div>
+    </div>
+    <div class="home-services-con about-planning-con">
+        <!-- === section 1 === -->
+            <div class="home-services-sec1" data-animation="scaleUp">
+                <div class="parent-circle">
+                    <span>1</span>
+                </div>
+                <h5>
+                  {{aboutSectionfour.subtitle1}}
+
+                </h5>
+                <div class="about-plan-description"> 
+                  <p>
+                    {{aboutSectionfour.description1}}
+                  </p>
+              </div>
+            </div>
+        <!-- === section 1 === -->
+        <!-- === section 2 === -->
+            <div class="home-services-sec2" data-animation="scaleUp" data-animation-delay="0.2s">
+                <div class="parent-circle">
+                    <span>2</span>
+                </div>
+                <h5>
+                  {{aboutSectionfour.subtitle2}}
+                </h5>
+                <div class="about-plan-description"> 
+                    <p>
+                      {{aboutSectionfour.description2}}
+                    </p>
+                </div>
+            </div>
+        <!-- === section 2 === -->
+        <!-- === section 3 === -->
+        <div class="home-services-sec3" data-animation="scaleUp" data-animation-delay="0.2s">
+            <div class="parent-circle">
+                <span>3</span>
+            </div>
+            <h5>
+              {{aboutSectionfour.subtitle3}}
+            </h5>
+            <div class="about-plan-description"> 
+              <p>
+                {{aboutSectionfour.description3}}
+              </p>
+          </div>
+        </div>
+        <!-- === section 3 === -->
+         <!-- === section 4 === -->
+         <div class="home-services-sec3" data-animation="scaleUp">
+          <div class="parent-circle">
+              <span>4</span>
+          </div>
+          <h5>
+            {{aboutSectionfour.subtitl4}}
+          </h5>
+          <div class="about-plan-description"> 
+            <p>
+              {{aboutSectionfour.description4}}
+            </p>
+        </div>
+      </div>
+      <!-- === section 4 === -->
+    </div>
+</div>
+{% endfor %}
+
+<!-- === About section four  ==== -->
+<!-- === About section five  ==== -->
+{% for aboutSectionfifth in aboutSectionfifth %}
+<div class="skill-section">
+  <div class="skill-section-1">
+    <img src="{{aboutSectionfifth.img.url}}" alt="">
+  </div>
+  <div class="skill-section-2 about-meter-section">
+    <div>
+        <h1 class="about-meter-title maxh1" data-animation="slideInDown">
+          {{aboutSectionfifth.title}}
+        </h1>
+        <div class="meter-sec-1">
+          <div class="meter-sub-section about-meter">
+              <div>
+                  <div class="counter-meter">       
+                      <div id="start1" class="start-counter"></div>
+                      <h2 id="counter1" class="counter" data-stop="{{aboutSectionfifth.meter1}}" data-speed="20">0</h2>
+                      <span>+</span>
+                  </div>  
+                      <h3>{{aboutSectionfifth.subtitle1}}</h3>
+                      <p>{{aboutSectionfifth.subdescription1}}</p>
+              </div>
+              <div>
+                  <div class="counter-meter"> 
+                      <div id="start2" class="start-counter"></div>
+                      <h2 id="counter2" class="counter" data-stop="{{aboutSectionfifth.meter2}}" data-speed="10">0 </h2>
+                      <span>%</span>    
+                  </div>     
+                  <h3>{{aboutSectionfifth.subtitle2}}</h3>
+                  <p>
+                    {{aboutSectionfifth.subdescription2}}
+                  </p>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+{% endfor %}
+<!-- === About section five  ==== -->
+<!-- === About section six  ==== -->
+{% for aboutSectionSixth in aboutSectionSixth %}
+  <div class="letdiscuss">
+    <div class="discus-title about-discuss">
+        <h1 data-animation="slideInDown">
+          {{aboutSectionSixth.title}}
+        </h1>
+        <p><a href="{% url 'contactus' %}"><button class="btn discuss-btn" data-animation="scaleUp"><span class="btn_txt">Get Started</span></button></a></p>
+    </div>
+  </div>
+  {% endfor %}
+<!-- === About section six  ==== -->
+
+
+
+
+
+
+
+
+
+
+{% endblock maincontent %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

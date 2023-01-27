@@ -1,0 +1,121 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Our Blog {% endblock %}
+
+{% block maincontent %}
+{% block portfliocss %}
+{% endblock portfliocss %}
+<!-- === blog section one  ==== -->
+<div class="blog-categorey">
+    <div>
+
+
+        <div>   
+            <div class="blog-title" data-animation="slideInDown">
+                <h2>{{blogdetail.title}}</h2> 
+            </div>
+            <div class="blogicon" data-animation="slideInUp"> 
+                <p class="date"><ion-icon name="time-outline"></ion-icon><span>{{blogdetail.date}}</span></p>  
+            </div>
+
+
+      
+        </div>  
+        <div class="blogimg">
+            <img src="{{blogdetail.img.url}}" alt="">
+        </div>
+        <div class="blogimg blogeallpara">
+            <div>
+                <p data-animation="slideInDown">
+                   {{blogdetail.description1}}
+
+                </p>
+                <br />
+                <br />
+                <p data-animation="slideInUp">
+                   {{blogdetail.description2}}
+
+                </p>
+                <br />
+                <br />
+                <p data-animation="slideInDown">
+                    {{blogdetail.description3}}
+
+                </p>
+            </div>
+           
+        </div>
+        <div class="mainImg">
+
+        <div class="blog-related-img">
+            <div class="blogrelatedimg">
+                <img src="{{blogdetail.relatedimg1.url}}" alt="" onclick="openFullscreen(this);" data-animation="scaleUp">
+                <img src="{{blogdetail.relatedimg2.url}}" alt="" onclick="openFullscreen(this);" data-animation="scaleUp">
+                <img src="{{blogdetail.relatedimg3.url}}" alt="" onclick="openFullscreen(this);" data-animation="scaleUp">
+                <img src="{{blogdetail.relatedimg4.url}}" alt=""onclick="openFullscreen(this);" data-animation="scaleUp">
+                <img src="{{blogdetail.relatedimg5.url}}" alt="" onclick="openFullscreen(this);" data-animation="scaleUp">
+                <img src="{{blogdetail.relatedimg6.url}}" alt="" onclick="openFullscreen(this);" data-animation="scaleUp">
+                
+            </div>
+         
+        </div>
+    </div>
+    <div class="emptyheight" style="height: 70px;"></div>
+    <div class="blogimg blogeallpara">
+        <div>
+            
+            <p data-animation="slideInDown">
+               {{blogdetail.description7}}
+            </p>
+        </div>
+       
+    </div>
+   
+
+    
+</div>
+
+   
+
+ 
+  </div>
+
+  
+
+  <script>
+    function openFullscreen(img) {
+      var img = img.src;
+      var element = document.createElement("img");
+      element.src = img;
+      element.onclick = function(){
+        document.body.removeChild(element);
+      }
+      element.style.cssText = "position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999999; object-fit: contain; cursor:pointer";
+    
+      document.body.appendChild(element);
+  }
+  </script>
+
+
+
+
+
+
+<div class="letdiscuss">
+
+    <div class="discus-title">
+        <h1 data-animation="slideInUp">Let's discuss your project
+            and make something awesome
+        </h1>
+        <p><a href="{% url 'contactus' %}"><button class="btn discuss-btn"  data-animation="scaleUp"><span class="btn_txt">Start Project</span></button></a></p>
+
+    </div>
+  </div>
+
+<!-- === blog section one  ==== -->
+
+{% endblock maincontent %}
+{% block meter %}
+{% endblock meter %}
+{% block  portfolio %}  
+{% endblock portfolio %}  

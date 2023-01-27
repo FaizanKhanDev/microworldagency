@@ -1,0 +1,410 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Home {% endblock %}
+{% block about %}
+{% endblock about %}
+{% block portfliocss %}
+{% endblock portfliocss %}
+{% block services %}
+{% endblock services %}
+
+{% block maincontent %}    
+
+<!-- ===== home ===== -->
+
+    <!-- ===== First home Section ===== --> 
+    {% for homeBg in homeBg %}  
+        <div class="mainhome" style="background-image: url({{homeBg.img.url}});">
+            <div class="home-content">
+                <div class="home-content-sec">
+                    {% for homettle in homettle %}
+                        <h1 data-animation="slideInDown" class="mainhometitle" > 
+                            {{homettle.title1}}
+                            <!-- <br />  -->
+                            {{homettle.title2}}
+
+                             <!-- <br />  -->
+                             {{homettle.title3}}
+
+                            </h1>
+                        <p data-animation="slideInUp" class="mainhomedes" >
+                           {{homettle.description1}}
+                             <!-- <br /> -->
+                             {{homettle.description2}}
+                        </p>
+                       
+                    {% endfor %}
+                    
+                    <a href="{% url 'services' %}"><button class="btn getstarted" data-animation="scaleUp"><span class="btn_txt">Get Started</span></button></a>
+                </div>
+            </div>
+        </div>
+{% endfor %}
+    <!-- ===== First home Section ===== -->   
+
+
+    <!-- ===== Second home Section ===== -->   
+    <div class="height" style="height: 800px;"></div>
+    {% for homeServicestitle in homeServicestitle %}
+            <div class="home-services">
+                <div class="homeservices-title">
+                    <h1 data-animation="slideInDown">
+                       {{homeServicestitle.title}}
+                    </h1>
+                </div>
+                <div class="home-services-con">
+                    <!-- === section 1 === -->
+                        <div class="home-services-sec1" data-animation="slideInUp" data-animation-delay="0.3s">
+                            <div class="parent-circle">
+                                <span>1</span>
+                            </div>
+                            <h5>{{homeServicestitle.subtitle1}}</h5>
+                                <p>
+                                    {{homeServicestitle.description1}}
+                                </p>
+                        </div>
+                    <!-- === section 1 === -->
+                    <!-- === section 2 === -->
+                        <div class="home-services-sec2" data-animation="slideInUp">
+                            <div class="parent-circle">
+                                <span>2</span>
+                            </div>
+                            <h5>{{homeServicestitle.subtitle2}}</h5>
+                            <p>
+                                {{homeServicestitle.description2}}
+
+                            </p>
+                        </div>
+                       
+                    <!-- === section 2 === -->
+                    <!-- === section 3 === -->
+
+                    <div class="home-services-sec3" data-animation="slideInUp" data-animation-delay="0.6s">
+                        <div class="parent-circle">
+                            <span>3</span>
+                        </div>
+                        <h5>{{homeServicestitle.subtitle3}}</h5>
+                        <p>
+                           {{homeServicestitle.description3}}
+                        </p>
+                    </div>
+                    <!-- === section 3 === -->
+                </div>
+            </div>
+            {% endfor %}
+
+    <!-- ===== Second home Section ===== -->  
+
+    <!-- ===== Third home Section ===== -->  
+    {% for homeSectionthird in homeSectionthird %}
+            <div class="workandexperience">
+                <div class="workandexperience-con">
+                    <div class="workexperience-title">
+                        <div class="titles-responsive">
+                            <h1 data-animation="slideInDown">
+                                {{homeSectionthird.title}}
+                            </h1>
+                        </div>
+                        <div class="descriprtion-section">
+                            <p data-animation="slideInUp">
+                                {{homeSectionthird.description}}
+                            </p>
+                        </div>
+                       
+                    </div>
+                    <div class="experience-img">
+                      <img src="{{homeSectionthird.img.url}}" alt="" data-animation="flipInY">
+                    </div>
+                    <div class="strategy">
+                        <div>
+                            <div class="digtal-experience">
+                                {% for homeIcons in homeIcons %}
+                                <img src="{{homeIcons.icon1.url}}" alt="" style="width: 40px; height: 40px;">  
+                              {% endfor %}
+                                <h5 data-animation="fadeIn">{{homeSectionthird.subtitle1}}</h5>
+                            <p data-animation="slideInUp">
+                               {{homeSectionthird.subdescription1}}
+                            </p>
+                            </div>
+                            <br />
+                            <div class="branding-strategy">
+                                {% for homeIcons in homeIcons %}
+                                  <img src="{{homeIcons.icon2.url}}" alt="" style="width: 40px; height: 40px;">  
+                                {% endfor %}
+                                <!-- <ion-icon name="finger-print-outline"></ion-icon> -->
+                                
+                                <h5 data-animation="fadeIn">{{homeSectionthird.subtitle2}}</h5>
+                                <p data-animation="slideInUp">
+                                    {{homeSectionthird.subdescription2}}
+                                </p>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+    {% endfor %}
+    <!-- ===== Third home Section ===== -->   
+    <!-- ===== Fourth home Section ===== --> 
+    {% for homeSectionfour in homeSectionfour %}  
+     <div class="meter-section">
+        <div class="meter-con">
+            <div class="meter-sec-1">
+                <img src="{{homeSectionfour.img.url}}" alt="">
+            </div>
+            <div class="meter-sec-1">
+                <h1 data-animation="slideInUp">
+                    {{homeSectionfour.title}}
+                </h1>
+                <div class="meter-sub-section">
+                    <div>
+                        <div class="counter-meter">       
+                            <div id="start1" class="start-counter"></div>
+                            <h2 id="counter1" class="counter" data-stop="{{homeSectionfour.meter1}}" data-speed="5">0</h2>
+                            <span>+</span>
+                        </div>  
+                            <h3>{{homeSectionfour.subtitle1}}</h3>
+                            <p data-animation="fadeIn">
+                                {{homeSectionfour.subdescription1}}
+                            </p>
+                    </div>
+                    <div>
+                        <div class="counter-meter"> 
+                            <div id="start2" class="start-counter"></div>
+                            <h2 id="counter2" class="counter" data-stop="{{homeSectionfour.meter2}}" data-speed="10">0 </h2>
+                            <span>%</span>    
+                        </div>     
+
+                        
+                        <h3>{{homeSectionfour.subtitle2}}</h3>
+                        <p data-animation="fadeIn">
+                            {{homeSectionfour.subdescription2}}
+                        </p>
+                    </div>
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    {% endfor %}  
+    
+
+    <!-- ===== Fourth home Section ===== -->   
+    <!-- ===== fifth home Section ===== -->  
+    {% for homeSectionfifth in homeSectionfifth %}
+        <div class="workandexperience">
+            <div class="workandexperience-con">
+                <div class="workexperience-title">
+                    <div class="titles-responsive">
+                        <h1 data-animation="fadeIn">
+                            {{homeSectionfifth.title}}
+                        </h1>
+                    </div>
+                    <div class="descriprtion-section">
+                        <p data-animation="slideInDown">
+                           {{homeSectionfifth.description}}
+                        </p>
+                    </div>
+                
+                </div>
+                <div class="experience-img">
+                <img src="{{homeSectionfifth.img.url}}" alt="">
+                </div>
+                <div class="strategy">
+                    <div>
+                        <div class="digtal-experience">
+                          
+                            {% for homeIcons in homeIcons %}
+                                <img src="{{homeIcons.icon3.url}}" alt="" style="width: 40px; height: 40px;">  
+                              {% endfor %}
+                            <h5 data-animation="slideInDown">{{homeSectionfifth.subtitle1}}</h5>
+                        <p data-animation="slideInUp">
+                            {{homeSectionfifth.subdescription1}}
+                        </p>
+                        </div>
+                        <br />
+                        <div class="branding-strategy">
+                            {% for homeIcons in homeIcons %}
+                                <img src="{{homeIcons.icon4.url}}" alt="" style="width: 40px; height: 40px;">  
+                              {% endfor %}
+                            <h5 data-animation="slideInDown">
+                                {{homeSectionfifth.subtitle2}}
+                            </h5>
+                            <p data-animation="slideInUp">
+                                {{homeSectionfifth.subdescription2}}
+                            </p>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+{% endfor %}
+<!-- ===== Fifth home Section ===== -->   
+
+<!-- ===== Sixth home Section ===== --> 
+
+{% for homeSlidertitle in homeSlidertitle %}
+<div class="slider-con" style="background-image: url({{homeSlidertitle.sliderbg.url}});">
+    <div class="slider-section">
+            <div class="slider-title"> 
+                <div>
+                        <h1 data-animation="slideInUp">{{homeSlidertitle.title}}</h1>
+                  
+                    <div class="slider-navigation">
+                        <div class="next">
+                            <ion-icon name="arrow-back-outline" data-animation="slideInUp" data-animation-delay="0.2s"></ion-icon>
+                        </div>
+                        <div class="prev">
+                            <ion-icon name="arrow-forward-outline" class="prev" data-animation="slideInUp" data-animation-delay="0.3s"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        <div class="swiper testominal-slider">
+            <div class="swiper-wrapper">
+                {% for homeSlider in homeSlider %}
+                    <div class="swiper-slide box">
+                        <div class="slider-1">
+                            <p> 
+                                {{homeSlider.description}}
+                            </p>
+                        </div>
+                        <div class="slider-img">
+                            <!-- <img src="{% static 'assets/images/testimonial1.jpg' %}" alt=""> -->
+                            <div>
+                                <h6>{{homeSlider.title}}</h6>
+                                <!-- <p>Chief Executive</p> -->
+                            </div>
+                            
+                        </div>
+                    </div>
+                {% endfor %}
+                <!-- <div class="swiper-slide box">
+                    <div class="slider-1">
+                        <p>
+                            Dignissim per dis dignissim mi nibh a parturient habitasse suspendisse ut a 
+                            feugiat morbi neque tortor.Tellus volutpat scelerisque tempor.
+                        </p>
+                    </div>
+                    <div class="slider-img">
+                        <img src="{% static 'assets/images/testimonial2.jpg' %}" alt="">
+                        <div>
+                            <h6> Luke Jacobs</h6>
+                            <p>Marketing Manager</p>
+                        </div>
+                       
+                    </div>
+                    
+                </div> -->
+                <!-- <div class="swiper-slide box">
+                    <div class="slider-1">
+                        <p>
+                            Dignissim per dis dignissim mi nibh a parturient habitasse suspendisse ut a 
+                            feugiat morbi neque tortor.Tellus volutpat scelerisque tempor.
+                        </p>
+                    </div>
+                    <div class="slider-img">
+                        <img src="{% static 'assets/images/testimonial3.jpg' %}" alt="">
+                        <div>
+                            <h6>Claire Oslson</h6>
+                            <p>Financial Manager</p>
+                        </div>
+                       
+                    </div>
+                    
+                </div> -->
+                <!-- <div class="swiper-slide box">
+                    <div class="slider-1">
+                        <p>
+                            Dignissim per dis dignissim mi nibh a parturient habitasse suspendisse ut a 
+                            feugiat morbi neque tortor.Tellus volutpat scelerisque tempor.
+                        </p>
+                    </div>
+                    <div class="slider-img">
+                        <img src="{% static  'assets/images/testimonial4.jpg' %}" alt="">
+                        <div>
+                            <h6>Amber Page</h6>
+                            <p>Web developer</p>
+                        </div>
+                        
+                    </div>
+                </div> -->
+                <!-- <div class="swiper-slide box">
+                    <div class="slider-1">
+                        <p>
+                            Dignissim per dis dignissim mi nibh a parturient habitasse suspendisse ut a 
+                            feugiat morbi neque tortor.Tellus volutpat scelerisque tempor.
+                        </p>
+                    </div>
+                    <div class="slider-img">
+                         <img src="{% static  'assets/images/testimonial5.jpg' %}" alt="">
+                         <div>
+                            <h6>Amber Page</h6>
+                            <p>Web developer</p>
+                         </div>
+                         
+                    </div>
+                </div> -->
+            </div> 
+        </div>
+    </div>
+</div>
+{% endfor %}
+<!-- ===== Sixth home Section ===== -->   
+<!-- ===== Seven home Section ===== -->  
+  <div class="whatsinyourmind">
+    <div class="whatsyourmind-title">
+        {% for homeSectionsixth in homeSectionsixth %}
+        <div>
+            <h1  data-animation="slideInDown">
+               {{homeSectionsixth.title}}
+            </h1>
+            <div class="descriptionofyourmind">
+                <p data-animation="slideInUp">
+                    {{homeSectionsixth.description}}
+            </p>
+            </div>
+            
+        </div>
+       {% endfor %}
+    </div>
+    <div class="whatyourmind-con">
+        {% for homeblog in homeblog %}
+            <div class="mind-sec-1" data-animation="slideInUp" data-animation-delay="0.3s">
+                <img src="{{homeblog.img.url}}" alt="">
+            <a href="{% url 'blog' %}">
+                <h4>{{homeblog.title}}</h4>
+            </a>
+                <div class="readmore">
+                    <a href="">Read More <ion-icon name="arrow-forward-outline"></ion-icon></a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    
+  </div>
+{% for  homeletDiscus in homeletDiscus %}
+  <div class="letdiscuss">
+    <div class="discus-title">
+        <h1 data-animation="slideInUp">
+           {{homeletDiscus.title}}
+        </h1>
+        <p><a href="{% url 'contactus' %}"><button class="btn discuss-btn"  data-animation="scaleUp"><span class="btn_txt">Start Project</span></button></a></p>
+    </div>
+  </div>
+{% endfor %}
+<!-- ===== Seven home Section ===== -->   
+ 
+
+{% endblock maincontent %}
+{% block  portfolio %}  
+{% endblock portfolio %}  
+
+{% block jquery %}
+{% endblock jquery %}
+
+
+
+
+
+

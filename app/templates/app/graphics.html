@@ -1,0 +1,378 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Graphics Design{% endblock %}
+
+{% block privacy  %}
+{% endblock privacy  %}
+{% block about %}
+{% endblock about %}
+{% block homeblock %}
+{% endblock homeblock %}
+{% block contactcss %}
+{% endblock contactcss %}   
+{% block contact %}
+{% endblock contact %}
+{% block portfliocss %}
+{% endblock portfliocss %}
+
+{% block maincontent %}
+<!-- === services section one  ==== -->
+
+  
+{% for servicesBg in servicesBg %}
+  <section class="about-wrap" style="background-image: url({{servicesBg.img.url}});">
+    <div class="video-bg">
+      <iframe src="https://www.youtube.com/embed/W7YKO3t30Rc?autoplay=1&mute=1&playsinline=1&loop=1&playlist=W7YKO3t30Rc&controls=0&disablekb=1"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
+    </div>
+    <div class="about-content">
+      {% for servicesTitle in servicesTitle %}
+        <div class="about-container">
+          <h1 class="about-title" data-animation="slideInUp">
+            {{servicesTitle.title}}
+          </h1>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+{% endfor %}
+  <!-- === services section one  ==== -->
+  <!-- === services section two  ==== -->
+  <div class="brand-title-responsive">
+    {% for servicessectionTwo in servicessectionTwo %}
+      <h1 data-animation="slideInUp">
+          {{servicessectionTwo.title}}
+      </h1>
+    {% endfor %}
+    </div>
+    {% for servicessectionTwo in servicessectionTwo %}
+      <div class="brand-section">
+        <div class="brand-title">
+          <h1 data-animation="slideInUp">
+            {{servicessectionTwo.title}}
+          </h1>
+        </div>
+        <div class="brand-decription" data-animation="slideInUp" data-animation-delay="0.2s">
+          <p>
+            {{servicessectionTwo.description1}}
+          </p>
+        </div>
+        <div class="brand-decription description-2" data-animation="slideInUp">
+          <p>
+            {{servicessectionTwo.description2}}
+          </p>
+        </div>
+      </div>
+    {% endfor %}
+    
+  <!-- === services section two  ==== -->
+  <!-- === services section three  ==== -->
+    <div class="ourservices-con">
+      {% for servicesCategorie in servicesCategorie %}
+      {% for graphicsAllIcons in graphicsAllIcons %}
+        <div class="services-sec1">
+            <p data-animation="scaleUp">
+              <img src="{{graphicsAllIcons.icon1.url}}" alt=""> 
+            </p>  
+            <h6 data-animation="slideInUp">
+               {{servicesCategorie.title1}}
+            </h6>
+        </div>
+        <div class="services-sec1">
+            <p data-animation="scaleUp" data-animation-delay="0.2s">
+              <img src="{{graphicsAllIcons.icon2.url}}" alt=""> 
+            </p>  
+            <h6 data-animation="slideInUp">{{servicesCategorie.title2}}</h6>
+        </div>
+        <div class="services-sec1">
+            <p data-animation="scaleUp">
+              <img src="{{graphicsAllIcons.icon3.url}}" alt=""> 
+            </p>
+            <h6 data-animation="slideInUp">{{servicesCategorie.title3}}</h6>
+        </div>
+        <div class="services-sec1">
+            <p data-animation="scaleUp">
+              <img src="{{graphicsAllIcons.icon4.url}}" alt=""> 
+            </p>  
+            <h6 data-animation="slideInUp">{{servicesCategorie.title4}}</h6>
+        </div>
+        <div class="services-sec1">
+            <p data-animation="scaleUp">
+              <img src="{{graphicsAllIcons.icon5.url}}" alt=""> 
+            </p>  
+            <h6 data-animation="slideInUp">{{servicesCategorie.title5}}</h6>
+        </div>
+          
+        <div class="services-sec1">
+          <p data-animation="scaleUp" data-animation-delay="0.2s">
+            <img src="{{graphicsAllIcons.icon6.url}}" alt=""> 
+          </p>  
+          <h6 data-animation="slideInUp">{{servicesCategorie.title6}}</h6>
+        </div>
+        <div class="services-sec1">
+          <p data-animation="scaleUp" data-animation-delay="0.2s">
+            <img src="{{graphicsAllIcons.icon7.url}}" alt=""> 
+          </p>  
+          <h6 data-animation="slideInUp">{{servicesCategorie.title7}}</h6>
+        </div>
+        <div class="services-sec1">
+          <p data-animation="scaleUp" data-animation-delay="0.2s">
+            <img src="{{graphicsAllIcons.icon8.url}}" alt=""> 
+          </p>  
+          <h6 data-animation="slideInUp">{{servicesCategorie.title8}}</h6>
+        </div>
+        <div class="services-sec1">
+          <p data-animation="scaleUp" data-animation-delay="0.2s">
+            <img src="{{graphicsAllIcons.icon9.url}}" alt=""> 
+          </p>  
+          <h6 data-animation="slideInUp">{{servicesCategorie.title9}}</h6>
+        </div>
+        {% endfor %}
+      {% endfor %}
+    </div>
+  <!-- === services section three  ==== -->
+  <!-- === services section Four  ==== -->
+  <div class="services-height">
+      <div class="services-main-con-1">
+      {% for servicessectionthree in servicessectionthree %}
+          <div class="services-main-sec-1">
+            <img src="{{servicessectionthree.img.url}}" alt="">
+          </div>
+      {% endfor %}
+        <div class="services-main-sec-1">
+          <div class="servicesmain-sub forXl">
+            <div>
+              {% for servicessectionSubthree in servicessectionSubthree %}
+                <a href="">
+                  <div class="hover-effects">
+                    <div class="subhover">
+                      <div class="services-category-icons" data-animation="slideInUp">
+                        {% for graphicsAllIcons in graphicsAllIcons %}
+                            <img src="{{graphicsAllIcons.icon1.url}}" style="width: 50px; height:50px" class="servicesallicons"   alt="Webdevelopment">
+                        {% endfor %}
+
+                        <h5>{{servicessectionSubthree.title1}}</h5>
+                      </div>                 
+                         <p data-animation="slideInDown" class="disturbicon">{{servicessectionSubthree.description1}}</p>  
+                    </div>
+                  </div>
+                </a>
+                <a href="">
+                  <div class="hover-effects">
+                  <div class="subhover">
+                    <div class="services-category-icons" data-animation="slideInUp">
+                      {% for graphicsAllIcons in graphicsAllIcons %}
+                          <img src="{{graphicsAllIcons.icon2.url}}" style="width: 50px; height:50px" class="servicesallicons"   alt="Webdevelopment">
+                      {% endfor %}
+
+                      <h5>{{servicessectionSubthree.title2}}</h5>
+                    </div>                 
+                      <p data-animation="slideInDown" class="disturbicon">{{servicessectionSubthree.description2}}</p>
+                        
+                      </p>  
+                    </div>
+                    
+                  </div>
+              </a>
+              <a href="">
+                <div class="hover-effects">
+                  <div class="subhover">
+                    <div class="services-category-icons" data-animation="slideInUp">
+                      {% for graphicsAllIcons in graphicsAllIcons %}
+                          <img src="{{graphicsAllIcons.icon3.url}}" style="width: 50px; height:50px" class="servicesallicons"   alt="Webdevelopment">
+                      {% endfor %}
+
+                      <h5>{{servicessectionSubthree.title3}}</h5>
+                    </div>                 
+                    <p data-animation="slideInDown" class="disturbicon">{{servicessectionSubthree.description3}}</p>  
+                    </div>
+                  </div>
+              </a>
+            </div>
+            {% endfor %}
+          </div>
+          </div>
+      </div>
+      <div class="services-main-con-2">
+        <div class="services-main-sec-1">
+          <div class="servicesmain-sub forxl">
+            <div>
+              {% for servicessectionfour in servicessectionSubfour %}
+              <a href="">
+                <div class="hover-effects">
+                  <div class="subhover">
+                    <div class="services-category-icons" data-animation="slideInUp">
+                      {% for graphicsAllIcons in graphicsAllIcons %}
+                         <img src="{{graphicsAllIcons.icon4.url}}" style="width: 50px; height:50px" class="servicesallicons"   alt="Webdevelopment">
+                      {% endfor %}
+                      <h5>{{servicessectionfour.title1}}</h5>
+                    </div>                 
+                      <p data-animation="slideInDown" class="disturbicon">
+                        {{servicessectionfour.description1}}
+                      </p>  
+                    </div>
+                    
+                  </div>
+                </a>
+                <a href="">
+                  <div class="hover-effects">
+                    <div class="subhover">
+                    <div class="services-category-icons" data-animation="slideInUp">
+                      {% for graphicsAllIcons in graphicsAllIcons %}
+                          <img src="{{graphicsAllIcons.icon5.url}}" style="width: 50px; height:50px" class="servicesallicons"   alt="Webdevelopment">
+                      {% endfor %}
+                      <h5>{{servicessectionfour.title2}}</h5>
+                    </div>                 
+                      <p data-animation="slideInDown" class="disturbicon">{{servicessectionfour.description2}}</p>  
+                  </div>
+                </div>
+              </a>
+              <a href="">
+                <div class="hover-effects">
+                  <div class="subhover">
+                    <div class="services-category-icons" data-animation="slideInUp">
+                      {% for graphicsAllIcons in graphicsAllIcons %}
+                          <img src="{{graphicsAllIcons.icon6.url}}" style="width: 50px; height:50px" class="servicesallicons"   alt="Webdevelopment">
+                      {% endfor %}
+                      <h5>{{servicessectionfour.title3}}</h5>
+                    </div>                 
+                      <p data-animation="slideInDown" class="disturbicon">{{servicessectionfour.description3}}</p>  
+                  </div>
+                  
+                </div>
+              </a>
+              {% endfor %}
+            </div>
+          </div>
+        
+
+        </div>
+      <!-- <div class="services-main-sec-1 bg"></div> -->
+      {% for servicessectionfour in servicessectionfour %}
+        <div class="services-main-sec-1">
+          <img src="{{servicessectionfour.img.url}}" alt="">
+        </div>
+      {% endfor %}
+    </div>
+    <div class="services-main-con-1">
+      {% for servicessectionthree in graphicsfive %}
+          <div class="services-main-sec-1">
+            <img src="{{servicessectionthree.img.url}}" alt="">
+          </div>
+      {% endfor %}
+        <div class="services-main-sec-1">
+          <div class="servicesmain-sub forXl">
+            <div>
+              {% for graphicsSubfive in graphicsSubfive %}
+                <a href="">
+                  <div class="hover-effects">
+                    <div class="subhover">
+                      <div class="services-category-icons" data-animation="slideInUp">
+                        {% for graphicsAllIcons in graphicsAllIcons %}
+                             <img src="{{graphicsAllIcons.icon1.url}}" style="width: 50px; height:50px" class="servicesallicons"   alt="Webdevelopment">
+                        {% endfor %}
+                        <h5>{{graphicsSubfive.title1}}</h5>
+                      </div>                 
+                        <p data-animation="slideInDown" class="disturbicon">{{graphicsSubfive.description1}}</p>  
+                    </div>
+                  </div>
+                </a>
+                <a href="">
+                  <div class="hover-effects">
+                  <div class="subhover">
+                    <div class="services-category-icons" data-animation="slideInUp">
+                        {% for graphicsAllIcons in graphicsAllIcons %}
+                             <img src="{{graphicsAllIcons.icon2.url}}" style="width: 50px; height:50px" class="servicesallicons"   alt="Webdevelopment">
+                        {% endfor %}
+                      <h5>{{graphicsSubfive.title2}}</h5>
+                    </div>                 
+                      <p data-animation="slideInDown" class="disturbicon">{{graphicsSubfive.description2}}</p>
+                    </div>
+                  </div>
+              </a>
+              <a href="">
+                <div class="hover-effects">
+                  <div class="subhover">
+                    <div class="services-category-icons" data-animation="slideInUp">
+                        {% for graphicsAllIcons in graphicsAllIcons %}
+                             <img src="{{graphicsAllIcons.icon3.url}}" style="width: 50px; height:50px" class="servicesallicons"   alt="Webdevelopment">
+                        {% endfor %}
+                      <h5>{{graphicsSubfive.title3}}</h5>
+                    </div>                 
+                    <p data-animation="slideInDown" class="disturbicon">{{graphicsSubfive.description3}}</p>  
+                    </div>
+                  </div>
+              </a>
+            </div>
+            <!-- {% endfor %} -->
+          </div>
+          </div>
+      </div>
+  </div>
+</div>
+  <!-- === services section Four  ==== -->
+    {% for servicessectionfifth in servicessectionfifth %}
+        <div class="our-reviews">
+          <div class="review-sec">
+            <h1 data-animation="slideInDown">{{servicessectionfifth.title}}</h1>
+            <p data-animation="slideInUp">{{servicessectionfifth.description}}</p>
+          </div>
+        </div>
+    {% endfor %}
+  <!-- === services section five  ==== -->
+  <div class="skill-section">
+      {% for graphicsContact in graphicsContact %}
+        <div class="skill-section-1 services-img">
+          <img src="{{graphicsContact.img.url}}" alt="">
+        </div>
+        <div class="OurContactform">
+          <div class="ourmaincontactform">
+            <div class="ourcontactform-title">
+              <div> 
+                <h2 data-animation="slideInDown">{{graphicsContact.title}}</h2>
+                <div class="descriptionofourmaincontact">
+                  <p data-animation="slideInUp">{{graphicsContact.description}}
+                  </p>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+          {% for graphicsContactDetail in graphicsContactDetail %}
+            <div class="ourContactdetail">
+                <a href="https://wa.me/{{graphicsContactDetail.PhoneUrl}}" data-animation="scaleUp" target="_blank">
+                  <ion-icon name="call"></ion-icon>
+                  <p>{{graphicsContactDetail.PhoneNumber}}</p>
+                </a> 
+                <a href="mailto:{{graphicsContactDetail.email}}" data-animation="scaleUp">
+                  <ion-icon name="mail"></ion-icon>
+                  <p>{{graphicsContactDetail.email}}</p>
+                </a>
+            </div>
+          {% endfor %}
+            <div class="ourMainform">
+              <form action="" class="ourMainActionForm" method="POST">
+                {% csrf_token %}
+                {% for form in form  %}
+                   {{form}} {{form.error|striptags}}
+                {% endfor %}
+                <button type="submit" class="btn submitbtn"><span class="btn_txt">SEND MESSAGE</span> </button>
+              </form>
+            </div>
+        </div>
+      </div>
+    </div>
+<!-- === services section five  ==== -->
+<!-- === services section six  ==== -->
+{% for servicessectionsixth in servicessectionsixth %}
+  <div class="letdiscuss">
+  <div class="discus-title about-discuss">
+      <h1 data-animation="slideInDown">
+       {{servicessectionsixth.title}}
+      </h1>
+      <p><a href="{% url 'contactus' %}"><button class="btn discuss-btn" data-animation="scaleUp"><span class="btn_txt">Get Started</span></button></a></p>
+  </div>
+  </div>
+{% endfor %}
+<!-- === services section six  ==== -->
+
+
+{% endblock maincontent %}
